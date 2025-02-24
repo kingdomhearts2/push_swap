@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 21:12:54 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/24 14:17:31 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/24 14:45:00 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,17 @@ int	stack_sorted(t_stack_node *head)
 			return (0);
 	}
 	return (1);
+}
+
+int	stack_len(t_stack_node *head)
+{
+	int	i;
+
+	i = 0;
+	while (head->next)
+	{
+		head = head->next;
+		i++;
+	}
+	return (i);
 }
