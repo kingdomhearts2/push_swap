@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: silent <silent@student.42.fr>              +#+  +:+       +#+        */
+/*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:42:39 by silent            #+#    #+#             */
-/*   Updated: 2025/02/23 18:44:41 by silent           ###   ########.fr       */
+/*   Updated: 2025/02/24 02:07:28 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define PUSH_SWAP_H
 
 # include <limits.h>
-# include "./inc/libft/libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+
 
 typedef struct s_stack_node
 {
@@ -29,4 +32,13 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
+char	**ft_split(char *str, char charset);
+long	ft_atol(char *str);
+int		error_syntax(char *str);
+void	init_stack_a(t_stack_node **a, char **argv, int splitted);
+void	free_stack(t_stack_node **stack);
+void	error_free(t_stack_node **a, char **argv, int splitted);
+int	error_repeat(t_stack_node *a, long nbr);
+void	append_node(t_stack_node **stack, int nbr);
+void	free_split(char **argv);
 #endif

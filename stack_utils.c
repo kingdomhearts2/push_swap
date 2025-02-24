@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/23 21:12:54 by edjebri           #+#    #+#             */
+/*   Updated: 2025/02/23 21:14:29 by edjebri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+t_stack_node	*find_last_node(t_stack_node *head)
+{
+	if (NULL == head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
+}
+
+/*
+ * Search for the last node and append
+ * 🚨 Pay attention if the stack empty?
+*/
+void	append_node(t_stack_node **stack, int nbr)
+{
+	t_stack_node	*node;
+	t_stack_node	*last_node;
+
+	if (NULL == stack)
+		return ;
+	node = malloc(sizeof(t_stack_node));
+	if (NULL == node)
+		return ;
+	node->next = NULL;
+	node->nbr = nbr;
+	if (NULL == *stack)
+	{
+		*stack = node;
+		node->prev = NULL;
+	}
+	else
+	{
+		last_node = find_last_node(*stack);
+		last_node->next = node;
+		node->prev = last_node;
+	}
+}
