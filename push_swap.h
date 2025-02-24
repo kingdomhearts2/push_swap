@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:42:39 by silent            #+#    #+#             */
-/*   Updated: 2025/02/24 20:01:13 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/24 23:57:07 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,22 @@ void	free_split(char **argv);
 int	stack_sorted(t_stack_node *head);
 int	stack_len(t_stack_node *head);
 t_stack_node	*find_last_node(t_stack_node *head);
+
+void	ss(t_stack_node **a,t_stack_node **b);
+void	sb(t_stack_node **b);
+void	sa(t_stack_node **a);
+
+void	rr(t_stack_node **a,t_stack_node **b);
+void	rb(t_stack_node **b);
+void	ra(t_stack_node **a);
+
+void	rrr(t_stack_node **a, t_stack_node **b);
+void	rrb(t_stack_node **b);
+void	rra(t_stack_node **a);
+
+int		highest(t_stack_node *head);
+void	sort_three(t_stack_node **a);
+
+void	reverse_rotate(t_stack_node **stack);
 
 #endif

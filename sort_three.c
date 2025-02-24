@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 23:53:50 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/24 23:55:53 by edjebri          ###   ########.fr       */
+/*   Created: 2025/02/24 23:24:06 by edjebri           #+#    #+#             */
+/*   Updated: 2025/02/24 23:50:41 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack_node **a)
+void	sort_three(t_stack_node **a)
 {
-	reverse_rotate(a);
-	write(1, "rra\n", 4);
-}
-
-void	rrb(t_stack_node **b)
-{
-	reverse_rotate(b);
-	write(1, "rrb\n", 4);
-}
-
-void	rrr(t_stack_node **a, t_stack_node **b)
-{
-	reverse_rotate(a);
-	reverse_rotate(b);
-	write(1, "rrr\n", 4);
+	if ((*a)->nbr == highest(*a))
+		ra(a);
+	else if ((*a)->next->nbr == highest(*a))
+		rra(a);
+	if ((*a)->nbr > (*a)->next->nbr)
+		sa(a);
 }
