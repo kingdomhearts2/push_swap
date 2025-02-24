@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:53:22 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/24 19:43:49 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/24 20:58:11 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,54 @@ void	swap(t_stack_node **stack)
 	*stack = second_node;
 }
 
+void	rotate(t_stack_node **stack)
+{
+	t_stack_node	*first_node;
+	t_stack_node	*last_node;
+
+	last_node = find_last_node(*stack);
+	first_node = *stack;
+	*stack = first_node->next;
+	last_node->next = first_node;
+	first_node->next->prev = NULL;
+	first_node->next = NULL;
+	first_node->prev = last_node;
+}
+
+void	reverse_rotate(t_stack_node **stack)
+{
+	t_stack_node *first_node;
+	t_stack_node *last_node;
+
+	last_node = find_last_node;
+	first_node = *stack;
+	*stack = last_node;
+	last_node->prev->next = NULL;
+	last_node->prev = NULL;
+	last_node->next = first_node;
+	first_node->prev = last_node;
+}
+
+void	push(t_stack_node **a, t_stack_node **b)
+{
+	
+}
+
 void	sa(t_stack_node **a)
 {
 	swap(a);
-	fftprintf()
+	write(1, "sa\n", 3);
+}
+
+void	sb(t_stack_node **b)
+{
+	swap(b);
+	write(1, "sb\n", 3);
+}
+
+void	ss(t_stack_node **a,t_stack_node **b)
+{
+	swap(a);
+	swap(b);
+	write(1, "ss\n", 3);
 }
