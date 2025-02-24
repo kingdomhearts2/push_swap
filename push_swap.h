@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:42:39 by silent            #+#    #+#             */
-/*   Updated: 2025/02/24 02:07:28 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/24 14:15:56 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ void	error_free(t_stack_node **a, char **argv, int splitted);
 int	error_repeat(t_stack_node *a, long nbr);
 void	append_node(t_stack_node **stack, int nbr);
 void	free_split(char **argv);
+int	stack_sorted(t_stack_node *head);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 21:12:54 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/23 21:14:29 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/24 14:17:31 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	append_node(t_stack_node **stack, int nbr)
 	t_stack_node	*node;
 	t_stack_node	*last_node;
 
-	if (NULL == stack)
+	if (stack == NULL)
 		return ;
 	node = malloc(sizeof(t_stack_node));
 	if (NULL == node)
 		return ;
 	node->next = NULL;
 	node->nbr = nbr;
-	if (NULL == *stack)
+	if (*stack == NULL)
 	{
 		*stack = node;
 		node->prev = NULL;
@@ -48,4 +48,18 @@ void	append_node(t_stack_node **stack, int nbr)
 		last_node->next = node;
 		node->prev = last_node;
 	}
+}
+
+int	stack_sorted(t_stack_node *head)
+{
+	int	nb;
+
+	nb = head-> nbr;
+	while (head->next)
+	{
+		head = head->next;
+		if (nb > head->nbr)
+			return (0);
+	}
+	return (1);
 }
