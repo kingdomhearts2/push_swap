@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:41:47 by silent            #+#    #+#             */
-/*   Updated: 2025/02/25 00:15:32 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/25 03:08:52 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	init_stack_a(&a, argv + 1, argc == 2);
 	if (!stack_sorted(a))
 	{
-		printf("pas trié %d", stack_len(a));
+		printf("pas trié");
 		if (stack_len(a) == 2)
 			sa(&a);
 		else if (stack_len(a) == 3)
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 	}
 	else
 		printf("trié");
+	longest_sorted(a);
 	free_stack(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:42:39 by silent            #+#    #+#             */
-/*   Updated: 2025/02/24 23:57:07 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/25 03:00:04 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ int		highest(t_stack_node *head);
 void	sort_three(t_stack_node **a);
 
 void	reverse_rotate(t_stack_node **stack);
+void	longest_sorted(t_stack_node *node);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:53:22 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/24 23:52:51 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/26 01:42:38 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	rotate(t_stack_node **stack)
 
 void	reverse_rotate(t_stack_node **stack)
 {
-	t_stack_node *first_node;
-	t_stack_node *last_node;
+	t_stack_node	*first_node;
+	t_stack_node	*last_node;
 
 	last_node = find_last_node(*stack);
 	first_node = *stack;

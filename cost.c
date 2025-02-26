@@ -1,0 +1,87 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cost.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/26 03:03:26 by edjebri           #+#    #+#             */
+/*   Updated: 2025/02/26 04:01:36 by edjebri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(a);
+	len_b = stack_len(b);
+	while (a)
+	{
+		if (a->above_median == a->target_node->above_median)
+			a->push_cost = ft_max(push_cost(a, len_a),push_cost(a->target_node, len_b));
+		else
+			a->push_cost = push_cost(a, len_a) + push_cost(a->target_node, len_b);
+		a = a->next;
+	}
+}
+
+void	set_cheapest(t_stack_node *a)
+{
+	long			cheapest_value;
+	t_stack_node	*cheapest_node;
+
+	if (!a)
+		return ;
+	cheapest_value = LONG_MAX;
+	while (a)
+	{
+		if (a->push_cost < cheapest_value)
+		{
+			cheapest_value = a->push_cost;
+			cheapest_node = a;
+		}
+		a = a->next;
+	}
+	cheapest_node->cheapest = 1;
+}
+
+void	sort_stacks(t_stack_node **a, t_stack_node **b)
+{
+	int	len_a;
+
+	len_a = stack_len(*a);
+	if (len_a-- > 3 && !stack_sorted(*a))
+		pb(b, a);
+	if (len_a-- > 3 && !stack_sorted(*a))
+		pb(b, a);
+	while (len_a-- > 3 && !stack_sorted(*a))
+	{
+		update_metadata(*a, *b);
+		move_a_to_b(a, b);
+	}
+	sort_three(a);
+	while (*b)
+	{
+
+	}
+}
+
+static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*cheapest_node;
+
+	cheapest_node = find_cheapest(*a);
+}
+
+t_stack_node	*find_cheapest(t_stack_node *a)
+{
+	t_stack_node *cheapest_node
+
+	while (a->cheapest)
+	{
+
+}

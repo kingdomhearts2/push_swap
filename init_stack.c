@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 19:27:01 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/24 02:22:01 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/25 03:09:14 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,24 @@ void	init_stack_a(t_stack_node **a, char **argv, int splitted)
 	}
 	if (splitted)
 		free_split(argv);
+}
+
+void	longest_sorted(t_stack_node *node)
+{
+	int	i;
+
+	i = 1;
+	while (node->next != NULL)
+	{
+		if (node->nbr < node->next->nbr)
+		{
+			i++;
+			printf("%d<%d, i = %d\n", node->nbr,node->next->nbr,i);
+		}
+		else
+			i = 1;
+		node = node->next;
+	}
+	printf("%d", i);
+	return ;
 }
