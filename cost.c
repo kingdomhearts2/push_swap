@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:03:26 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/26 04:01:36 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/27 04:02:32 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 	while (a)
 	{
 		if (a->above_median == a->target_node->above_median)
-			a->push_cost = ft_max(push_cost(a, len_a),push_cost(a->target_node, len_b));
+			a->push_cost =
+				ft_max(push_cost(a, len_a),push_cost(a->target_node, len_b));
 		else
-			a->push_cost = push_cost(a, len_a) + push_cost(a->target_node, len_b);
+			a->push_cost = push_cost(a, len_a) +
+				push_cost(a->target_node, len_b);
 		a = a->next;
 	}
 }
@@ -75,13 +77,47 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*cheapest_node;
 
 	cheapest_node = find_cheapest(*a);
+	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
+		rotate_both(a, b, cheapest_node);
+	else if (!(cheapest_node->above_median)
+		&& !(cheapest_node->target_node->above_median))
+		rev_rotate_both(a, b, cheapest_node);
+	prep_for_push(a, cheapest_node, 'a');
+	prep_for_push(b, cheapest_node->target_node, 'b');
+	pb(b, a);
 }
 
 t_stack_node	*find_cheapest(t_stack_node *a)
 {
-	t_stack_node *cheapest_node
+	t_stack_node *cheapest_node;
 
-	while (a->cheapest)
+	if (!a)
+		return (NULL);
+	while (a)
 	{
+		if (a->cheapest)
+			return (a);
+		a = a->next;
+	}
+}
 
+static void	rotate_both(t_stack_node **a,
+	t_stack_node **b,
+	t_stack_node *cheapest_node)
+{
+	while (*b != cheapest_node->target_node && *a != cheapest_node)
+		rr(a, b);
+	update_index(*a);
+	update_index(*b);
+}
+
+static void	rev_rotate_both(t_stack_node **a,
+	t_stack_node **b,
+	t_stack_node *cheapest_node)
+{
+	while (*b != cheapest_node->target_node
+		&& *a != cheapest_node)
+		rrr(a, b);
+	update_index(*a);
+	update_index(*b);
 }
