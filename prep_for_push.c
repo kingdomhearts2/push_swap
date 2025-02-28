@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 03:19:51 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:21:29 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:55:07 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	set_target_b(t_stack_node *a, t_stack_node *b)
 	t_stack_node	*target;
 	long			closest_nbr;
 
-	while (a)
+	while (b)
 	{
 		closest_nbr = LONG_MAX;
 		current_a = a;
