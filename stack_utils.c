@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 21:12:54 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/24 23:31:25 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 03:39:17 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,6 @@ t_stack_node	*find_last_node(t_stack_node *head)
 	return (head);
 }
 
-/*
- * Search for the last node and append
- * 🚨 Pay attention if the stack empty?
-*/
 void	append_node(t_stack_node **stack, int nbr)
 {
 	t_stack_node	*node;

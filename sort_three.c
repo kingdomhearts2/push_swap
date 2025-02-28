@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:24:06 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/26 03:23:43 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 03:30:55 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sort_three(t_stack_node **a)
 		sa(a);
 }
 
-void	update_metadata(t_stack_node *a, t_stack_node *b)
+void	update_metadata_a(t_stack_node *a, t_stack_node *b)
 {
 	update_index(a);
 	update_index(b);

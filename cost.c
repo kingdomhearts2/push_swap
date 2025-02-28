@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:03:26 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/27 04:02:32 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 03:45:37 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 	{
 		if (a->above_median == a->target_node->above_median)
 			a->push_cost =
-				ft_max(push_cost(a, len_a),push_cost(a->target_node, len_b));
+				ft_max(push_cost(a, len_a), push_cost(a->target_node, len_b));
 		else
 			a->push_cost = push_cost(a, len_a) +
 				push_cost(a->target_node, len_b);
@@ -62,14 +62,17 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 		pb(b, a);
 	while (len_a-- > 3 && !stack_sorted(*a))
 	{
-		update_metadata(*a, *b);
+		update_metadata_a(*a, *b);
 		move_a_to_b(a, b);
 	}
 	sort_three(a);
 	while (*b)
 	{
-
+		update_metadata_b(*a, *b);
+		move_b_to_a(a, b);
 	}
+	current_index(*a);
+	smallest_first(a);
 }
 
 static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
