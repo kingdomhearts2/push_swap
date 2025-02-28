@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 03:19:51 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 03:42:47 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:21:29 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	update_metadata_b(t_stack_node *a, t_stack_node *b)
 	set_target_b(a, b);
 }
 
-static void	set_target_b(t_stack_node *a, t_stack_node *b)
+void	set_target_b(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
 	t_stack_node	*target;
@@ -68,18 +68,22 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-int	smallest(t_stack_node *head)
+t_stack_node	*smallest(t_stack_node *head)
 {
 	long	nb;
+	t_stack_node	*smallest;
 
 	nb = LONG_MAX;
 	while (head->next)
 	{
 		if (nb > head->nbr)
+		{
+			smallest = head;
 			nb = head->nbr;
+		}
 		head = head->next;
 	}
-	return (nb);
+	return (smallest);
 }
 
 void	move_b_to_a(t_stack_node **a, t_stack_node **b)

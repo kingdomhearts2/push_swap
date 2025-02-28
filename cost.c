@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:03:26 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 03:45:37 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:13:12 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 	smallest_first(a);
 }
 
-static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
+void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest_node;
 
@@ -92,8 +92,6 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 
 t_stack_node	*find_cheapest(t_stack_node *a)
 {
-	t_stack_node *cheapest_node;
-
 	if (!a)
 		return (NULL);
 	while (a)
@@ -102,25 +100,26 @@ t_stack_node	*find_cheapest(t_stack_node *a)
 			return (a);
 		a = a->next;
 	}
+	return (NULL);
 }
 
-static void	rotate_both(t_stack_node **a,
+void	rotate_both(t_stack_node **a,
 	t_stack_node **b,
 	t_stack_node *cheapest_node)
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rr(a, b);
-	update_index(*a);
-	update_index(*b);
+	current_index(*a);
+	current_index(*b);
 }
 
-static void	rev_rotate_both(t_stack_node **a,
+void	rev_rotate_both(t_stack_node **a,
 	t_stack_node **b,
 	t_stack_node *cheapest_node)
 {
 	while (*b != cheapest_node->target_node
 		&& *a != cheapest_node)
 		rrr(a, b);
-	update_index(*a);
-	update_index(*b);
+	current_index(*a);
+	current_index(*b);
 }

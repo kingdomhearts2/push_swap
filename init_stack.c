@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 19:27:01 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/25 03:09:14 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:31:23 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,10 @@ void	longest_sorted(t_stack_node *node)
 	while (node->next != NULL)
 	{
 		if (node->nbr < node->next->nbr)
-		{
 			i++;
-			printf("%d<%d, i = %d\n", node->nbr,node->next->nbr,i);
-		}
 		else
 			i = 1;
 		node = node->next;
 	}
-	printf("%d", i);
 	return ;
 }

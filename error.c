@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 20:31:40 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/24 17:58:21 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:31:45 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	error_syntax(char *str)
 		if (!(*str >= '0' && *str <= '9'))
 			return (1);
 	}
-	printf("NO Error\n");
 	return (0);
 }
 
@@ -38,10 +37,7 @@ void	free_split(char **argv)
 	if (NULL == argv || NULL == *argv)
 		return ;
 	while (argv[i])
-	{
 		free(argv[i++]);
-		printf("free%d\n", i);
-	}
 	free(argv - 1);
 }
 

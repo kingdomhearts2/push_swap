@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:24:06 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 03:30:55 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:26:10 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	sort_three(t_stack_node **a)
 {
-	if ((*a)->nbr == highest(*a))
+	if ((*a)->nbr == highest(*a)->nbr)
 		ra(a);
-	else if ((*a)->next->nbr == highest(*a))
+	else if ((*a)->next->nbr == highest(*a)->nbr)
 		rra(a);
 	if ((*a)->nbr > (*a)->next->nbr)
 		sa(a);
@@ -24,8 +24,8 @@ void	sort_three(t_stack_node **a)
 
 void	update_metadata_a(t_stack_node *a, t_stack_node *b)
 {
-	update_index(a);
-	update_index(b);
+	current_index(a);
+	current_index(b);
 	set_target_a(a, b);
 	cost_analysis_a(a, b);
 	set_cheapest(a);
@@ -77,7 +77,7 @@ void	set_target_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-void	push_cost(t_stack_node *a, int stack_len)
+int	push_cost(t_stack_node *a, int stack_len)
 {
 	if (a->above_median)
 		return (a->index);

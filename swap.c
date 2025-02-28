@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:53:22 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/26 01:42:38 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:29:56 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,28 +56,6 @@ void	reverse_rotate(t_stack_node **stack)
 	last_node->prev = NULL;
 	last_node->next = first_node;
 	first_node->prev = last_node;
-}
-
-void	push(t_stack_node **a, t_stack_node **b)
-{
-	t_stack_node	*first_node;
-	t_stack_node	*new_first_node_a;
-	t_stack_node	*first_node_b;
-
-	first_node = *a;
-	new_first_node_a = first_node->next;
-	new_first_node_a->prev = NULL;
-	*a = new_first_node_a;
-	if (*b == NULL)
-		append_node(b, first_node->nbr);
-	else
-	{
-		first_node_b = *b;
-		first_node_b->prev = first_node;
-		first_node->prev = NULL;
-		first_node->next = first_node_b;
-		*b = first_node;
-	}
 }
 
 void	sa(t_stack_node **a)

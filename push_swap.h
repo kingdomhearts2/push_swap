@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:42:39 by silent            #+#    #+#             */
-/*   Updated: 2025/02/28 03:55:30 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:28:55 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	rrr(t_stack_node **a, t_stack_node **b);
 void	rrb(t_stack_node **b);
 void	rra(t_stack_node **a);
 
-int		highest(t_stack_node *head);
+t_stack_node		*highest(t_stack_node *head);
 void	sort_three(t_stack_node **a);
 
 void	reverse_rotate(t_stack_node **stack);
@@ -77,8 +77,21 @@ void	push_swap(t_stack_node **a, t_stack_node **b);
 void	pb(t_stack_node **b, t_stack_node **a);
 void	pa(t_stack_node **a, t_stack_node **b);
 void	rotate(t_stack_node **stack);
-void	push_cost(t_stack_node *a, int len_a, int len_b);
+int		push_cost(t_stack_node *a, int len_a);
 int	ft_max(int a, int b);
-int	smallest(t_stack_node *head);
+t_stack_node	*smallest(t_stack_node *head);
+void	rev_rotate_both(t_stack_node **a,
+	t_stack_node **b,
+	t_stack_node *cheapest_node);
+void	prep_for_push(t_stack_node **stack,
+	t_stack_node *top_node,
+	char stack_name);
 
+void	rotate_both(t_stack_node **a,
+		t_stack_node **b,
+		t_stack_node *cheapest_node);
+
+void	set_target_b(t_stack_node *a, t_stack_node *b);
+void	set_target_a(t_stack_node *a, t_stack_node *b);
+void	cost_analysis_a(t_stack_node *a, t_stack_node *b);
 #endif
