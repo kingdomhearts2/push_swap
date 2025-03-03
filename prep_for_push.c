@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 03:19:51 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:55:07 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 16:35:22 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	set_target_b(t_stack_node *a, t_stack_node *b)
 		}
 		b->target_node = target;
 		if (closest_nbr == LONG_MAX)
-			a->target_node = smallest(a);
+			b->target_node = smallest(a);
 		b = b->next;
 	}
 }
@@ -74,7 +74,7 @@ t_stack_node	*smallest(t_stack_node *head)
 	t_stack_node	*smallest;
 
 	nb = LONG_MAX;
-	while (head->next)
+	while (head)
 	{
 		if (nb > head->nbr)
 		{

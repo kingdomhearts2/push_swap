@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:42:39 by silent            #+#    #+#             */
-/*   Updated: 2025/02/28 14:28:55 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 16:34:56 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_stack_node	*find_cheapest(t_stack_node *a);
 void	rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node);
 void	current_index(t_stack_node *a);
 void	push_swap(t_stack_node **a, t_stack_node **b);
-void	pb(t_stack_node **b, t_stack_node **a);
+void	pb(t_stack_node **a, t_stack_node **b);
 void	pa(t_stack_node **a, t_stack_node **b);
 void	rotate(t_stack_node **stack);
 int		push_cost(t_stack_node *a, int len_a);

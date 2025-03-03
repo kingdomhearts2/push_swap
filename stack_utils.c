@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 21:12:54 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:25:28 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/02 22:09:05 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	stack_len(t_stack_node *head)
 {
 	int	i;
 
+	if (!head)
+		return (0);
 	i = 1;
 	while (head->next)
 	{
@@ -78,6 +80,8 @@ t_stack_node	*highest(t_stack_node *head)
 	long	nb;
 	t_stack_node	*highest;
 
+	if (!head)
+		return (NULL);
 	nb = LONG_MIN;
 	while (head->next)
 	{

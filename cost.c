@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:03:26 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:13:12 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 16:34:22 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 
 	len_a = stack_len(*a);
 	if (len_a-- > 3 && !stack_sorted(*a))
-		pb(b, a);
+		pb(a, b);
 	if (len_a-- > 3 && !stack_sorted(*a))
-		pb(b, a);
+		pb(a, b);
 	while (len_a-- > 3 && !stack_sorted(*a))
 	{
 		update_metadata_a(*a, *b);
@@ -72,7 +72,7 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 		move_b_to_a(a, b);
 	}
 	current_index(*a);
-	smallest_first(a);
+	//smallest_first(a);
 }
 
 void	move_a_to_b(t_stack_node **a, t_stack_node **b)
@@ -87,7 +87,7 @@ void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
-	pb(b, a);
+	pb(a, b);
 }
 
 t_stack_node	*find_cheapest(t_stack_node *a)
