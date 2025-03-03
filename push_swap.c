@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:41:47 by silent            #+#    #+#             */
-/*   Updated: 2025/02/28 14:32:55 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:53:32 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	if (1 == argc || (2 == argc && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
+		argv = ft_split(argv[1]);
 	init_stack_a(&a, argv + 1, argc == 2);
 	if (!stack_sorted(a))
 	{
@@ -38,47 +38,42 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-static int	is_charset(char c, char charset)
-{
-	return (c == charset);
-}
-
-static int	count_words(char *str, char charset)
+static int	count_words(char *str)
 {
 	int	count;
 
 	count = 0;
 	while (*str)
 	{
-		while (*str && is_charset(*str, charset))
+		while (*str && (*str == ' '))
 			str++;
 		if (*str)
 			count++;
-		while (*str && !is_charset(*str, charset))
+		while (*str && (*str != ' '))
 			str++;
 	}
 	return (count);
 }
 
-static int	word_length(char *str, char charset)
+static int	word_length(char *str)
 {
 	int	len;
 
 	len = 0;
-	while (str[len] && !is_charset(str[len], charset))
+	while (str[len] && (str[len] != ' '))
 		len++;
 	return (len);
 }
 
-static char	*next_word(char **str, char charset)
+static char	*next_word(char **str)
 {
 	char	*word;
 	int		len;
 	int		i;
 
-	while (**str && is_charset(**str, charset))
+	while (**str && (**str == ' '))
 		(*str)++;
-	len = word_length(*str, charset);
+	len = word_length(*str);
 	word = malloc(sizeof(char) * (len + 1));
 	if (!word)
 		return (NULL);
@@ -93,13 +88,13 @@ static char	*next_word(char **str, char charset)
 	return (word);
 }
 
-char	**ft_split(char *str, char charset)
+char	**ft_split(char *str)
 {
 	char	**tab;
 	int		words;
 	int		i;
 
-	words = count_words(str, charset);
+	words = count_words(str);
 	tab = malloc(sizeof(char *) * (words + 2));
 	if (!tab)
 		return (NULL);
@@ -112,9 +107,9 @@ char	**ft_split(char *str, char charset)
 			if (!tab[i])
 				return (NULL);
 			tab[i++][0] = '\0';
-			continue;
+			continue ;
 		}
-		tab[i++] = next_word(&str, charset);
+		tab[i++] = next_word(&str);
 	}
 	tab[i] = NULL;
 	return (tab);

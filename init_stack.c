@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 19:27:01 by edjebri           #+#    #+#             */
-/*   Updated: 2025/03/03 19:26:56 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:54:00 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ void	smallest_first(t_stack_node **a)
 
 int	ft_max(int a, int b)
 {
-   if (a < b)
-	   return (b);
-   else
-	   return (a);
+	if (a < b)
+		return (b);
+	else
+		return (a);
 }

@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 20:31:40 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:31:45 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:40:18 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	error_syntax(char *str)
 void	free_split(char **argv)
 {
 	int	i;
+
 	i = -1;
 	if (NULL == argv || NULL == *argv)
 		return ;
@@ -63,7 +64,6 @@ int	error_repeat(t_stack_node *a, long nbr)
 	}
 	return (0);
 }
-
 
 void	free_stack(t_stack_node **stack)
 {

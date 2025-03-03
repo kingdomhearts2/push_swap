@@ -6,35 +6,43 @@
 #    By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/23 20:47:43 by edjebri           #+#    #+#              #
-#    Updated: 2025/03/03 19:18:32 by edjebri          ###   ########.fr        #
+#    Updated: 2025/03/04 00:23:32 by edjebri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar
-ARFLAGS = rcs
+FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRCS = cost.c error.c main.c push_swap.c sort.c utils.c utils2.c
+SRCS =	cost.c\
+		stack_utils.c\
+		init_stack.c\
+		error.c\
+		prep_for_push.c\
+		push_rotateboth.c\
+		push_swap.c\
+		rotate_2.c\
+		rotate.c\
+		sort_three.c\
+		swap.c\
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+.c.o:
+	$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	cc -o $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
+all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all re clean fclean

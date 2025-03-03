@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 21:12:54 by edjebri           #+#    #+#             */
-/*   Updated: 2025/03/03 16:42:09 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:40:40 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	stack_len(t_stack_node *head)
 
 t_stack_node	*highest(t_stack_node *head)
 {
-	long	nb;
+	long			nb;
 	t_stack_node	*highest;
 
 	if (!head)
