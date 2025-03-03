@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 03:19:51 by edjebri           #+#    #+#             */
-/*   Updated: 2025/03/03 16:35:22 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:28:25 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	set_target_b(t_stack_node *a, t_stack_node *b)
 
 t_stack_node	*smallest(t_stack_node *head)
 {
-	long	nb;
+	long			nb;
 	t_stack_node	*smallest;
 
 	nb = LONG_MAX;
@@ -89,5 +89,5 @@ t_stack_node	*smallest(t_stack_node *head)
 void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
 	prep_for_push(a, (*b)->target_node, 'a');
-	pa(a, b);
+	pa(b, a);
 }

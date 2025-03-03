@@ -6,11 +6,11 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:53:22 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:29:56 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:22:06 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	swap(t_stack_node **stack)
 {

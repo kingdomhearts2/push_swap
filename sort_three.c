@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:24:06 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:26:10 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:27:57 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	current_index(t_stack_node *stack)
 		i++;
 	}
 }
+
 void	set_target_a(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_b;
@@ -84,12 +85,3 @@ int	push_cost(t_stack_node *a, int stack_len)
 	else
 		return ((stack_len - a->index));
 }
-
- int	ft_max(int a, int b)
- {
-	if (a < b)
-		return (b);
-	else
-		return (a);
- }
-

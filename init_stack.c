@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 19:27:01 by edjebri           #+#    #+#             */
-/*   Updated: 2025/02/28 14:31:23 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/03 19:26:56 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,23 @@ void	longest_sorted(t_stack_node *node)
 		node = node->next;
 	}
 	return ;
+}
+
+void	smallest_first(t_stack_node **a)
+{
+	while ((*a)->nbr != smallest((*a))->nbr)
+	{
+		if (smallest((*a))->above_median)
+			ra(a);
+		else
+			rra(a);
+	}
+}
+
+int	ft_max(int a, int b)
+{
+   if (a < b)
+	   return (b);
+   else
+	   return (a);
 }
