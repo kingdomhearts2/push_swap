@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:41:47 by silent            #+#    #+#             */
-/*   Updated: 2025/03/03 19:53:32 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/04 01:27:55 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
-	longest_sorted(a);
 	free_stack(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: edjebri <edjebri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 21:12:54 by edjebri           #+#    #+#             */
-/*   Updated: 2025/03/03 19:40:40 by edjebri          ###   ########.fr       */
+/*   Updated: 2025/03/04 01:26:53 by edjebri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,14 @@ int	stack_sorted(t_stack_node *head)
 {
 	int	nb;
 
-	nb = head-> nbr;
-	while (head->next)
+	nb = head->nbr;
+	head = head->next;
+	while (head)
 	{
-		head = head->next;
 		if (nb > head->nbr)
 			return (0);
+		nb = head->nbr;
+		head = head->next;
 	}
 	return (1);
 }
